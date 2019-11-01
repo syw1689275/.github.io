@@ -1,0 +1,61 @@
+<html>
+<head>
+
+</head>
+<style>
+	.back  {
+		text-align: center;
+		width: 60px;
+		height:100px;
+		line-height: 100px;
+		background: red;
+		position: absolute;
+		top: 50%;
+	}
+	.home{
+		text-align: center;
+		width: 60px;
+		height:100px;
+		line-height: 100px;
+		background: red;
+		position: absolute;
+		top: 50%;
+		right: 0
+	}
+</style>
+<body style=" width:100%; height:100%" onclick="insertWithin('img1','./assets/timg.jpg');">
+<audio id="audio" ></audio>
+<div class="back">返回</div>
+<div class="home">首页</div>
+
+<script defer  type="text/javascript">
+function insertWithin(idstr,url) {/*idstr: 图片标签的id，url:插入的图片的路径*/
+var au = document.getElementById("audio")
+au.src='http://www.w3school.com.cn/i/song.ogg'
+au.play()
+
+//指定结点 id
+var node = document.getElementsByTagName("body")[0];
+//创建
+var NewDiv = document.createElement("div");
+//对div设置定位
+NewDiv.style.position = "absolute";
+NewDiv.style.left = event.clientX;
+NewDiv.style.top = event.clientY;
+//创建div内加入的内容
+var Newimg = document.createElement("img");
+//对图片设置路径和img的id
+Newimg.src = url;
+Newimg.id = idstr;
+//追加一个新的子结点
+NewDiv.appendChild(Newimg);
+//追加一个新的结点
+node.appendChild(NewDiv);
+
+}
+
+
+
+</script>
+</body>
+<html>
